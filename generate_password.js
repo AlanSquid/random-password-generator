@@ -31,6 +31,11 @@ function generatePassword(options) {
     collection = collection.filter(character => !options.excludeCharacters.includes(character))
   }
 
+  // return error
+  if (collection.length === 0) {
+    return `There is no valid characters in your selection`
+  }
+
   // start generating password
   let password = ''
 
